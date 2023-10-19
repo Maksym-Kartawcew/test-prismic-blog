@@ -8,7 +8,6 @@ import { components } from "@/slices";
 import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
-import { HorizontalDivider } from "@/components/HorizontalDivider";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -18,7 +17,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 
 function LatestArticle({ article }) {
   const date = prismic.asDate(
-    article.data.publishDate || article.first_publication_date,
+    article.data.publishDate || article.first_publication_date
   );
 
   return (
@@ -44,7 +43,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${prismic.asText(article.data.title)} | ${prismic.asText(
-      settings.data.name,
+      settings.data.name
     )}`,
     description: article.data.meta_description,
     openGraph: {
@@ -65,7 +64,7 @@ export default async function Page({ params }) {
     .getByUID("article", params.uid)
     .catch(() => notFound());
   const latestArticles = await client.getAllByType("article", {
-    limit: 3,
+    limit: 10,
     orderings: [
       { field: "my.article.publishDate", direction: "desc" },
       { field: "document.first_publication_date", direction: "desc" },
@@ -75,7 +74,7 @@ export default async function Page({ params }) {
   const settings = await client.getSingle("settings");
 
   const date = prismic.asDate(
-    article.data.publishDate || article.first_publication_date,
+    article.data.publishDate || article.first_publication_date
   );
 
   return (
@@ -104,7 +103,6 @@ export default async function Page({ params }) {
       {latestArticles.length > 0 && (
         <Bounded>
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
-            <HorizontalDivider />
             <div className="w-full">
               <Heading size="2xl" className="mb-10">
                 Latest articles

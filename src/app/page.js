@@ -4,6 +4,7 @@ import { createClient } from "@/prismicio";
 import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
 import { Article } from "@/components/Article";
+import { ArticlesNet } from "../components/Components.styled.js"
 
 export async function generateMetadata() {
   const client = createClient();
@@ -32,12 +33,12 @@ export default async function Index() {
       navigation={navigation}
       settings={settings}
     >
-      <Bounded size="widest">
-        <ul className="grid grid-cols-1 gap-16">
+      <Bounded>
+        <ArticlesNet>
           {articles.map((article) => (
             <Article key={article.id} article={article} />
           ))}
-        </ul>
+        </ArticlesNet>
       </Bounded>
     </Layout>
   );

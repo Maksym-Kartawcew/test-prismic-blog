@@ -1,4 +1,4 @@
-import { Container, InnerContainer } from "./Components.styled";
+import { Container } from "./Components.styled";
 
 export function Bounded({ children }) {
   return <Container>{children}</Container>;

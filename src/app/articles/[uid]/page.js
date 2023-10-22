@@ -7,29 +7,20 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
+import { EditorsArticleCard } from "@/components/EditorsArticleCard";
+import {
+  EditorsPickNet,
+  SectionTitle,
+  HomeMainSection,
+  MainArticle,
+  CardDate,
+} from "../../../components/Components.styled.js";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   day: "numeric",
   year: "numeric",
 });
-
-function LatestArticle({ article }) {
-  const date = prismic.asDate(
-    article.data.publishDate || article.first_publication_date
-  );
-
-  return (
-    <li>
-      <h1>
-        <PrismicNextLink document={article}>
-          <PrismicText field={article.data.title} />
-        </PrismicNextLink>
-      </h1>
-      <p>{dateFormatter.format(date)}</p>
-    </li>
-  );
-}
 
 export async function generateMetadata({ params }) {
   const client = createClient();
@@ -75,43 +66,31 @@ export default async function Page({ params }) {
   );
 
   return (
-    <Layout
-      navigation={navigation}
-      withHeaderDivider={false}
-      withProfile={false}
-      settings={settings}
-    >
-      <Bounded>
-        <Link href="/" className="font-semibold tracking-tight text-slate-400">
-          &larr; Back to articles
-        </Link>
-      </Bounded>
-      <article>
-        <Bounded className="pb-0">
-          <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-            <PrismicText field={article.data.title} />
-          </h1>
-          <p className="font-serif italic tracking-tighter text-slate-500">
-            {dateFormatter.format(date)}
-          </p>
-        </Bounded>
-        <SliceZone slices={article.data.slices} components={components} />
-      </article>
-      {latestArticles.length > 0 && (
+    <Layout navigation={navigation} settings={settings}>
+      <HomeMainSection>
         <Bounded>
-          <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
-            <div className="w-full">
-              <h4>Latest articles</h4>
-
-              <ul className="grid grid-cols-1 gap-12">
-                {latestArticles.map((article) => (
-                  <LatestArticle key={article.id} article={article} />
-                ))}
-              </ul>
-            </div>
-          </div>
+          <Link href="/all-articles">&larr; Back to articles</Link>
         </Bounded>
-      )}
+
+        <MainArticle>
+          <Bounded className="pb-0">
+            <SectionTitle>
+              <PrismicText field={article.data.title} />
+            </SectionTitle>
+            <CardDate>{dateFormatter.format(date)}</CardDate>
+          </Bounded>
+          <SliceZone slices={article.data.slices} components={components} />
+        </MainArticle>
+
+        <Bounded>
+          <SectionTitle>Latests Articles</SectionTitle>
+          <EditorsPickNet>
+            {latestArticles.map((article) => (
+              <EditorsArticleCard key={article.id} article={article} />
+            ))}
+          </EditorsPickNet>
+        </Bounded>
+      </HomeMainSection>
     </Layout>
   );
 }

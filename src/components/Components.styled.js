@@ -7,7 +7,6 @@ export const Container = styled.div`
 `;
 
 // Header
-
 export const HeaderWrapper = styled.header`
   display: flex;
   height: 80px;
@@ -19,8 +18,13 @@ export const NavList = styled.div`
   display: flex;
   gap: 25px;
 `;
-// hero
+export const Logo = styled.div`
+  color: #f8f9fa;
+  font-size: 20px;
+  font-weight: 700;
+`;
 
+// hero
 export const HeroBackground = styled.div`
   background: url(${(props) => props.backgroundimage}) no-repeat center center;
   text-align: center;
@@ -203,4 +207,22 @@ export const EditorsCard = styled.div`
   border: 1px solid #e7e9fc;
   overflow: hidden;
   border-radius: 5px;
+`;
+
+export const MainArticle = styled.article`
+  color: #495057;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-height: 700px;
+    width: auto;
+    border-radius: 5px;
+  }
 `;

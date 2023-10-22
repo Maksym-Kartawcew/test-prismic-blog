@@ -3,7 +3,7 @@ import * as prismic from "@prismicio/client";
 import { PrismicText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "./Bounded";
-import { NavList, HeaderWrapper } from "./Components.styled";
+import { NavList, HeaderWrapper, Logo } from "./Components.styled";
 
 const NavItem = ({ children }) => {
   return <li>{children}</li>;
@@ -13,11 +13,13 @@ export const Header = ({ navigation }) => {
   return (
     <Bounded>
       <HeaderWrapper>
+        <Logo>
         <NavItem>
           <Link href="/">
             <PrismicText field={navigation.data.homepageLabel} />
           </Link>
         </NavItem>
+        </Logo>
 
         <NavList>
           {navigation.data?.links.map((item) => (

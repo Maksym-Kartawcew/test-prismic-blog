@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
 import { Article } from "@/components/Article";
 import { SubscribeForm } from "@/components/SubscribeForm.jsx";
+import { EditorsPick } from "@/components/EditorsPick.jsx";
 import {
   ArticlesHomeNet,
   HomeMainSection,
@@ -45,6 +46,9 @@ export default async function Index() {
         </Bounded>
       </HomeMainSection>
       <SubscribeForm />
+      <HomeMainSection>
+        <EditorsPick />
+      </HomeMainSection>
     </Layout>
   );
 }

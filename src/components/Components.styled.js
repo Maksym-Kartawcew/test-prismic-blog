@@ -52,7 +52,6 @@ export const HeroDescription = styled.div`
 `;
 
 // Articles homepage Net
-
 export const HomeMainSection = styled.section`
   background: #f8f9fa;
   width: 1440px;
@@ -70,7 +69,6 @@ export const SectionTitle = styled.h3`
   font-weight: 700;
   line-height: normal;
 `;
-
 export const ArticlesHomeNet = styled.div`
   margin-top: 30px;
   display: grid;
@@ -82,7 +80,6 @@ export const ArticlesHomeNet = styled.div`
     display: none;
   }
 `;
-
 export const ArticleCard = styled.div`
   height: 565px;
   width: 285px;
@@ -91,18 +88,15 @@ export const ArticleCard = styled.div`
   overflow: hidden;
   border-radius: 5px;
 `;
-
 export const CardDate = styled.p`
   color: #6c757d;
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 15px;
 `;
-
 export const CardContent = styled.div`
   padding: 20px;
 `;
-
 export const CardTitle = styled.h3`
   width: 250px;
   color: #495057;
@@ -111,7 +105,6 @@ export const CardTitle = styled.h3`
   line-height: 25px;
   margin-bottom: 15px;
 `;
-
 export const ArticleDescription = styled.p`
   color: #6c757d;
   font-size: 12px;
@@ -119,7 +112,6 @@ export const ArticleDescription = styled.p`
   font-weight: 400;
   line-height: 20px;
 `;
-
 export const ArticleImg = styled.div`
   width: 100%;
   height: 280px;
@@ -143,7 +135,6 @@ export const ArticlesNet = styled.div`
 `;
 
 // Footer
-
 export const FooterContainer = styled.section`
   width: 1440px;
   padding: 0;
@@ -152,7 +143,6 @@ export const FooterContainer = styled.section`
   justify-content: center;
   background: #212529;
 `;
-
 export const FooterWrapper = styled.footer`
   width: 1200px;
   margin: 0 auto;
@@ -170,7 +160,6 @@ export const SubscribeBackground = styled.div`
   padding-top: 220px;
   height: 600px;
 `;
-
 export const SubscribeHeading = styled.h2`
   color: #fff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -179,7 +168,6 @@ export const SubscribeHeading = styled.h2`
   text-align: center;
   margin-bottom: 25px;
 `;
-
 export const SubscribeText = styled.p`
   text-align: center;
   gap: 20px;
@@ -188,10 +176,31 @@ export const SubscribeText = styled.p`
   font-weight: 400;
   margin-bottom: 10px;
 `;
-
 export const SubscribeInput = styled.input`
   color: #495057;
   border-radius: 5px;
   padding: 5px;
   font-size: 14px;
+`;
+
+// Editors Pick
+export const EditorsPickNet = styled.div`
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-row-gap: 50px;
+
+  & > *:nth-child(n + 4) {
+    display: none;
+  }
+`;
+
+export const EditorsCard = styled.div`
+  height: 565px;
+  width: calc(1160 / 3);
+  background: #ffffff;
+  border: 1px solid #e7e9fc;
+  overflow: hidden;
+  border-radius: 5px;
 `;

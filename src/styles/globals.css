@@ -2,29 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: Lora;
+}
 
 a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  ul,
-  li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  p {
-    margin: 0;
-    padding: 0;
-  }
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}

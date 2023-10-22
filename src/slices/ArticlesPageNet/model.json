@@ -1,0 +1,16 @@
+{
+  "id": "articles_page_net",
+  "type": "SharedSlice",
+  "name": "ArticlesPageNet",
+  "description": "ArticlesPageNet",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

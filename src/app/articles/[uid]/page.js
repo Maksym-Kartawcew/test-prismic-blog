@@ -7,7 +7,6 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
-import { Heading } from "@/components/Heading";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -62,7 +61,7 @@ export default async function Page({ params }) {
     .getByUID("article", params.uid)
     .catch(() => notFound());
   const latestArticles = await client.getAllByType("article", {
-    limit: 10,
+    limit: 3,
     orderings: [
       { field: "my.article.publishDate", direction: "desc" },
       { field: "document.first_publication_date", direction: "desc" },
@@ -102,9 +101,8 @@ export default async function Page({ params }) {
         <Bounded>
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
             <div className="w-full">
-              <Heading size="2xl" className="mb-10">
-                Latest articles
-              </Heading>
+              <h4>Latest articles</h4>
+
               <ul className="grid grid-cols-1 gap-12">
                 {latestArticles.map((article) => (
                   <LatestArticle key={article.id} article={article} />

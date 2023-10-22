@@ -5,8 +5,7 @@ import * as prismic from "@prismicio/client";
 import { getExcerpt } from "@/lib/getExcerpt";
 import { findFirstImage } from "@/lib/findFirstImage";
 import { dateFormatter } from "@/lib/dateFormatter";
-
-import { Heading } from "./Heading";
+import { ArticleCard, ArticleImg, CardTitle,CardContent } from "./Components.styled";
 
 export function Article({ article }) {
   const featuredImage =
@@ -19,23 +18,24 @@ export function Article({ article }) {
   const excerpt = getExcerpt(article.data.slices);
 
   return (
-    <li>
+    <ArticleCard>
       <PrismicNextLink document={article}>
-        <div>
+        <ArticleImg>
           {prismic.isFilled.image(featuredImage) && (
-            <PrismicNextImage field={featuredImage}/>
+            <PrismicNextImage field={featuredImage} />
           )}
-        </div>
+        </ArticleImg>
       </PrismicNextLink>
-      <div>
-        <Heading>
-          <PrismicNextLink document={article}>
-            <PrismicText field={article.data.title} />
-          </PrismicNextLink>
-        </Heading>
+      <CardContent>
+        <PrismicNextLink document={article}>
+        <CardTitle>
+          <PrismicText field={article.data.title} />
+          </CardTitle>
+        </PrismicNextLink>
+
         <p>{dateFormatter.format(date)}</p>
         {excerpt && <p>{excerpt}</p>}
-      </div>
-    </li>
+      </CardContent>
+    </ArticleCard>
   );
 }

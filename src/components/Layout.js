@@ -24,7 +24,7 @@ export function Layout({
         profilePicture={settings.data.profilePicture}
       />
       <main>{children}</main>
-      <Footer withSignUpForm={withSignUpForm} settings={settings} />
+      <Footer navigation={navigation} />
     </div>
   );
 }

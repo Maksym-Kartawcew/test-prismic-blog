@@ -176,6 +176,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ArticlesPageNetSlice
   | ImageSlice
   | QuoteSlice
   | TextSlice
@@ -344,6 +345,36 @@ export type AllDocumentTypes =
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
+
+/**
+ * Default variation for ArticlesPageNet Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesPageNetSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ArticlesPageNet*
+ */
+type ArticlesPageNetSliceVariation = ArticlesPageNetSliceDefault;
+
+/**
+ * ArticlesPageNet Shared Slice
+ *
+ * - **API ID**: `articles_page_net`
+ * - **Description**: ArticlesPageNet
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesPageNetSlice = prismic.SharedSlice<
+  "articles_page_net",
+  ArticlesPageNetSliceVariation
+>;
 
 /**
  * Default variation for ContactForm Slice
@@ -581,6 +612,9 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      ArticlesPageNetSlice,
+      ArticlesPageNetSliceVariation,
+      ArticlesPageNetSliceDefault,
       ContactFormSlice,
       ContactFormSliceVariation,
       ContactFormSliceDefault,

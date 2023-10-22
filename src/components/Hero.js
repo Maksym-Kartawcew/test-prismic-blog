@@ -1,7 +1,6 @@
 import * as prismic from "@prismicio/client";
 import { createClient } from "../../src/prismicio";
-import { PrismicText, PrismicRichText } from "@prismicio/react";
-// import { PrismicNextImage } from "@prismicio/next";
+import { PrismicText } from "@prismicio/react";
 import {
   HeroDescription,
   HeroHeading,

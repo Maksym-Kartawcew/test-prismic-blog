@@ -1,21 +1,15 @@
-import * as prismic from "@prismicio/client";
+/**
+ * @typedef {import("@prismicio/client").Content.ArticlesPageNetSlice} ArticlesPageNetSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<ArticlesPageNetSlice>} ArticlesPageNetProps
+ * @param {ArticlesPageNetProps}
+ */
 
 import { createClient } from "@/prismicio";
-import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
 import { Article } from "@/components/Article";
-import { ArticlesHomeNet, HomeMainSection, SectionTitle } from "../components/Components.styled.js";
+import { ArticlesNet } from "../../components/Components.styled.js";
 
-export async function generateMetadata() {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
-
-  return {
-    title: prismic.asText(settings.data.name),
-  };
-}
-
-export default async function Index() {
+export default async function ArticlesPageNet({ slice }) {
   const client = createClient();
 
   const articles = await client.getAllByType("article", {
@@ -28,22 +22,20 @@ export default async function Index() {
   const settings = await client.getSingle("settings");
 
   return (
-    <Layout
-      navigation={navigation}
-      settings={settings}
+    <section
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
     >
-      <HomeMainSection>
       <Bounded>
+        <h3>All latest Topics</h3>
 
-        <SectionTitle> Popular topics</SectionTitle>
-        <ArticlesHomeNet>
+        <ArticlesNet>
           {articles.map((article) => (
             <Article key={article.id} article={article} />
           ))}
-        </ArticlesHomeNet>
-        
+        </ArticlesNet>
       </Bounded>
-      </HomeMainSection>
-    </Layout>
+    </section>
   );
 }
+

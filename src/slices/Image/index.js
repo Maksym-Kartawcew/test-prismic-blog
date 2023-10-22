@@ -2,7 +2,6 @@ import * as prismic from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 
 import { Bounded } from "@/components/Bounded";
-import { PrismicRichText } from "@/components/PrismicRichText";
 
 const Image = ({ slice }) => {
   const image = slice.primary.image;
@@ -14,11 +13,6 @@ const Image = ({ slice }) => {
           <div className="bg-gray-100">
             <PrismicNextImage field={image} sizes="100vw" className="w-full" />
           </div>
-        )}
-        {prismic.isFilled.richText(slice.primary.caption) && (
-          <figcaption className="text-center font-serif italic tracking-tight text-slate-500">
-            <PrismicRichText field={slice.primary.caption} />
-          </figcaption>
         )}
       </figure>
     </Bounded>

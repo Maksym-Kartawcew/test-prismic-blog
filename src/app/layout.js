@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${inter.className} ${libre_baskerville.className}`}
     >
-      <body className="overflow-x-hidden antialiased">
+      <body>
         <main>
            {children}
           <PrismicPreview repositoryName={repositoryName} />

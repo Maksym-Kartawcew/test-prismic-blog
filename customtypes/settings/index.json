@@ -12,7 +12,16 @@
           "label": "Name",
           "placeholder": "Name of your blog (e.g. your name)",
           "allowTargetBlank": false,
-          "single": "heading1"
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "blogdate": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Blog date",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "description": {
@@ -21,7 +30,7 @@
           "label": "Description",
           "placeholder": "Short description of your blog",
           "allowTargetBlank": false,
-          "single": "paragraph"
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "profilePicture": {
@@ -30,7 +39,7 @@
           "label": "Profile Picture",
           "constraint": {
             "width": null,
-            "height": null
+            "height": 600
           },
           "thumbnails": []
         }
@@ -41,7 +50,7 @@
           "label": "Newsletter Description",
           "placeholder": "Text above the sign up form",
           "allowTargetBlank": true,
-          "multi": "heading1,paragraph,strong,em,hyperlink,list-item,o-list-item"
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "newsletterDisclaimer": {
@@ -50,7 +59,7 @@
           "label": "Newsletter Disclaimer",
           "placeholder": "Small text below sign up form",
           "allowTargetBlank": true,
-          "multi": "paragraph,em,strong,hyperlink"
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       }
     }

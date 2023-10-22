@@ -1,5 +1,6 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { Hero } from "./Hero";
 
 export function Layout({
   navigation,
@@ -16,6 +17,11 @@ export function Layout({
         withDivider={withHeaderDivider}
         navigation={navigation}
         settings={settings}
+      />
+      <Hero
+        name={settings.data.name}
+        description={settings.data.description}
+        profilePicture={settings.data.profilePicture}
       />
       <main>{children}</main>
       <Footer withSignUpForm={withSignUpForm} settings={settings} />

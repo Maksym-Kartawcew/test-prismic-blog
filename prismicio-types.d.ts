@@ -259,13 +259,24 @@ interface SettingsDocumentData {
   /**
    * Name field in *Settings*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: Name of your blog (e.g. your name)
    * - **API ID Path**: settings.name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  name: prismic.TitleField;
+  name: prismic.RichTextField;
+
+  /**
+   * Blog date field in *Settings*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.blogdate
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  blogdate: prismic.RichTextField;
 
   /**
    * Description field in *Settings*

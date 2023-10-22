@@ -26,15 +26,21 @@ export const NavList = styled.div`
   gap: 25px;
 `;
 // hero
-export const HeroBackground = styled.div`
-  background-color: rgb(12 12 54);
-  margin-top: -80px;
-  height: 680px;
 
-  padding-top: 300px;
+export const HeroBackground = styled.div`
+background: url(${(props) => props.backgroundimage}) no-repeat center center;
+    text-align: center;
+  color: #fff;
+  margin-top: -80px;
+
+  padding-top: 220px;
+  padding-bottom: 150px;
 `;
 
-export const HeroWrapper = styled.div``;
+export const HeroWrapper= styled.div`
+
+`;
+
 
 export const HeroHeading = styled.div`
   color: #fff;

@@ -5,7 +5,13 @@ import * as prismic from "@prismicio/client";
 import { getExcerpt } from "@/lib/getExcerpt";
 import { findFirstImage } from "@/lib/findFirstImage";
 import { dateFormatter } from "@/lib/dateFormatter";
-import { ArticleCard, ArticleImg, CardTitle,CardContent } from "./Components.styled";
+import {
+  ArticleCard,
+  ArticleImg,
+  CardTitle,
+  CardContent,
+  CardDate,
+} from "./Components.styled";
 
 export function Article({ article }) {
   const featuredImage =
@@ -27,13 +33,13 @@ export function Article({ article }) {
         </ArticleImg>
       </PrismicNextLink>
       <CardContent>
+        <CardDate>{dateFormatter.format(date)}</CardDate>
         <PrismicNextLink document={article}>
-        <CardTitle>
-          <PrismicText field={article.data.title} />
+          <CardTitle>
+            <PrismicText field={article.data.title} />
           </CardTitle>
         </PrismicNextLink>
 
-        <p>{dateFormatter.format(date)}</p>
         {excerpt && <p>{excerpt}</p>}
       </CardContent>
     </ArticleCard>

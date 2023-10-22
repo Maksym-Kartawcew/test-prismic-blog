@@ -1,4 +1,3 @@
-import * as prismic from "@prismicio/client";
 import { createClient } from "../../src/prismicio";
 import { PrismicText } from "@prismicio/react";
 import {

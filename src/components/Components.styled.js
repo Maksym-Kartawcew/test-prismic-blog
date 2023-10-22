@@ -26,7 +26,6 @@ export const HeroBackground = styled.div`
   text-align: center;
   color: #fff;
   margin-top: -80px;
-
   padding-top: 220px;
   padding-bottom: 150px;
 `;
@@ -49,9 +48,7 @@ export const HeroDescription = styled.div`
   width: 600px;
   color: #e5e5e5;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
 `;
 
 // Articles homepage Net
@@ -95,16 +92,32 @@ export const ArticleCard = styled.div`
   border-radius: 5px;
 `;
 
+export const CardDate = styled.p`
+  color: #6c757d;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 15px;
+`;
+
 export const CardContent = styled.div`
   padding: 20px;
 `;
 
-export const CardTitle = styled.div`
+export const CardTitle = styled.h3`
   width: 250px;
   color: #495057;
   font-size: 18px;
   font-weight: 700;
   line-height: 25px;
+  margin-bottom: 15px;
+`;
+
+export const ArticleDescription = styled.p`
+  color: #6c757d;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 `;
 
 export const ArticleImg = styled.div`
@@ -121,10 +134,11 @@ export const ArticleImg = styled.div`
 
 // ArticlesPage Net
 export const ArticlesNet = styled.div`
-  margin-top: 150px;
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+  grid-row-gap: 50px;
   background: #f8f9fa;
 `;
 
@@ -146,4 +160,38 @@ export const FooterWrapper = styled.footer`
   display: flex;
   justify-content: space-between;
   color: #f8f9fa;
+`;
+
+// SubscribeForm
+export const SubscribeBackground = styled.div`
+  background: url(${(props) => props.backgroundimage}) no-repeat center center;
+  text-align: center;
+  color: #fff;
+  padding-top: 220px;
+  height: 600px;
+`;
+
+export const SubscribeHeading = styled.h2`
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+`;
+
+export const SubscribeText = styled.p`
+  text-align: center;
+  gap: 20px;
+  color: #e5e5e5;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 10px;
+`;
+
+export const SubscribeInput = styled.input`
+  color: #495057;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
 `;

@@ -7,7 +7,11 @@
 import { createClient } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
 import { Article } from "@/components/Article";
-import { ArticlesNet } from "../../components/Components.styled.js";
+import {
+  ArticlesNet,
+  HomeMainSection,
+  SectionTitle,
+} from "../../components/Components.styled.js";
 
 export default async function ArticlesPageNet({ slice }) {
   const client = createClient();
@@ -18,24 +22,25 @@ export default async function ArticlesPageNet({ slice }) {
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
-  const navigation = await client.getSingle("navigation");
-  const settings = await client.getSingle("settings");
+  // const navigation = await client.getSingle("navigation");
+  // const settings = await client.getSingle("settings");
 
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Bounded>
-        <h3>All latest Topics</h3>
+      <HomeMainSection>
+        <Bounded>
+          <SectionTitle>All latest Topics</SectionTitle>
 
-        <ArticlesNet>
-          {articles.map((article) => (
-            <Article key={article.id} article={article} />
-          ))}
-        </ArticlesNet>
-      </Bounded>
+          <ArticlesNet>
+            {articles.map((article) => (
+              <Article key={article.id} article={article} />
+            ))}
+          </ArticlesNet>
+        </Bounded>
+      </HomeMainSection>
     </section>
   );
 }
-

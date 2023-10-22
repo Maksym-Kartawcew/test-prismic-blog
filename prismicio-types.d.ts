@@ -322,6 +322,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   newsletterDisclaimer: prismic.RichTextField;
+
+  /**
+   * Subscribe Picture field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.subscribePicture
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  subscribePicture: prismic.ImageField<never>;
 }
 
 /**

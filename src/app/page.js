@@ -4,7 +4,12 @@ import { createClient } from "@/prismicio";
 import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
 import { Article } from "@/components/Article";
-import { ArticlesHomeNet, HomeMainSection, SectionTitle } from "../components/Components.styled.js";
+import { SubscribeForm } from "@/components/SubscribeForm.jsx";
+import {
+  ArticlesHomeNet,
+  HomeMainSection,
+  SectionTitle,
+} from "../components/Components.styled.js";
 
 export async function generateMetadata() {
   const client = createClient();
@@ -28,22 +33,18 @@ export default async function Index() {
   const settings = await client.getSingle("settings");
 
   return (
-    <Layout
-      navigation={navigation}
-      settings={settings}
-    >
+    <Layout navigation={navigation} settings={settings}>
       <HomeMainSection>
-      <Bounded>
-
-        <SectionTitle> Popular topics</SectionTitle>
-        <ArticlesHomeNet>
-          {articles.map((article) => (
-            <Article key={article.id} article={article} />
-          ))}
-        </ArticlesHomeNet>
-        
-      </Bounded>
+        <Bounded>
+          <SectionTitle> Popular topics</SectionTitle>
+          <ArticlesHomeNet>
+            {articles.map((article) => (
+              <Article key={article.id} article={article} />
+            ))}
+          </ArticlesHomeNet>
+        </Bounded>
       </HomeMainSection>
+      <SubscribeForm />
     </Layout>
   );
 }

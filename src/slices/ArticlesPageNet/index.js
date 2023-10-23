@@ -9,7 +9,6 @@ import { Bounded } from "@/components/Bounded";
 import { Article } from "@/components/Article";
 import {
   ArticlesNet,
-  HomeMainSection,
   SectionTitle,
 } from "../../components/Components.styled.js";
 
@@ -28,17 +27,15 @@ export default async function ArticlesPageNet({ slice }) {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <HomeMainSection>
-        <Bounded>
-          <SectionTitle>All latest Topics</SectionTitle>
+      <Bounded>
+        <SectionTitle>All latest Topics</SectionTitle>
 
-          <ArticlesNet>
-            {articles.map((article) => (
-              <Article key={article.id} article={article} />
-            ))}
-          </ArticlesNet>
-        </Bounded>
-      </HomeMainSection>
+        <ArticlesNet>
+          {articles.map((article) => (
+            <Article key={article.id} article={article} />
+          ))}
+        </ArticlesNet>
+      </Bounded>
     </section>
   );
 }

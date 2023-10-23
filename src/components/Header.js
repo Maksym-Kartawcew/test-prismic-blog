@@ -3,7 +3,7 @@ import * as prismic from "@prismicio/client";
 import { PrismicText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "./Bounded";
-import { NavList, HeaderWrapper, Logo, SocialList } from "./Components.styled";
+import { NavList, HeaderWrapper, Logo, SocialList, Navigation } from "./Components.styled";
 import { Facebook } from "../Icons/Facebook.jsx";
 import { Twitter } from "../Icons/Twitter.jsx";
 import { Instagram } from "../Icons/Instagram.jsx";
@@ -25,30 +25,32 @@ export const Header = ({ navigation }) => {
           </NavItem>
         </Logo>
 
-        <NavList>
-          {navigation.data?.links.map((item) => (
-            <NavItem key={prismic.asText(item.label)}>
-              <PrismicNextLink field={item.link}>
-                <PrismicText field={item.label} />
-              </PrismicNextLink>
-            </NavItem>
-          ))}
-        </NavList>
+        <Navigation>
+          <NavList>
+            {navigation.data?.links.map((item) => (
+              <NavItem key={prismic.asText(item.label)}>
+                <PrismicNextLink field={item.link}>
+                  <PrismicText field={item.label} />
+                </PrismicNextLink>
+              </NavItem>
+            ))}
+          </NavList>
 
-        <SocialList>
-          <li>
-            <Facebook />
-          </li>
-          <li>
-            <Twitter />
-          </li>
-          <li>
-            <Instagram />
-          </li>
-          <li>
-            <Pinterest />
-          </li>
-        </SocialList>
+          <SocialList>
+            <li>
+              <Facebook />
+            </li>
+            <li>
+              <Twitter />
+            </li>
+            <li>
+              <Instagram />
+            </li>
+            <li>
+              <Pinterest />
+            </li>
+          </SocialList>
+        </Navigation>
       </HeaderWrapper>
     </Bounded>
   );

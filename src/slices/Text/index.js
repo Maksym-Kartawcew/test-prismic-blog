@@ -1,16 +1,13 @@
-import * as prismic from "@prismicio/client";
 import { PrismicText } from "@prismicio/react";
-
 import { Bounded } from "@/components/Bounded";
+import { ProfileDescription } from "../../components/Components.styled";
 
 const Text = ({ slice }) => {
   return (
     <Bounded>
-      {prismic.isFilled.richText(slice.primary.text) && (
-        <div>
-          <PrismicText field={slice.primary.text} />
-        </div>
-      )}
+      <ProfileDescription>
+        <PrismicText field={slice.primary.text} />
+      </ProfileDescription>
     </Bounded>
   );
 };

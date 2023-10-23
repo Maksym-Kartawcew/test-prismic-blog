@@ -11,6 +11,7 @@ import {
   CardTitle,
   CardContent,
   CardDate,
+  ArticleDescription,
 } from "./Components.styled";
 
 export function Article({ article }) {
@@ -39,8 +40,9 @@ export function Article({ article }) {
             <PrismicText field={article.data.title} />
           </CardTitle>
         </PrismicNextLink>
-
-        {excerpt && <p>{excerpt}</p>}
+        <ArticleDescription>
+          {excerpt}
+        </ArticleDescription>
       </CardContent>
     </ArticleCard>
   );

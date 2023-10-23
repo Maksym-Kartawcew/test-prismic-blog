@@ -6,9 +6,9 @@ export function getExcerpt(slices) {
     .map((slice) => prismic.asText(slice.primary.text))
     .join(" ");
 
-  const excerpt = text.substring(0, 300);
+  const excerpt = text.substring(0, 200);
 
-  if (text.length > 300) {
+  if (text.length > 200) {
     return excerpt.substring(0, excerpt.lastIndexOf(" ")) + "…";
   } else {
     return excerpt;

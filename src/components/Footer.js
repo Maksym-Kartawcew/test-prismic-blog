@@ -2,8 +2,17 @@ import Link from "next/link";
 import * as prismic from "@prismicio/client";
 import { PrismicText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
-
-import { FooterContainer, FooterWrapper, NavList } from "./Components.styled";
+import {
+  FooterContainer,
+  Logo,
+  SocialList,
+  FooterWrapper,
+  NavList,
+} from "./Components.styled";
+import { Facebook } from "../Icons/Facebook.jsx";
+import { Twitter } from "../Icons/Twitter.jsx";
+import { Instagram } from "../Icons/Instagram.jsx";
+import { Pinterest } from "../Icons/Pinterest.jsx";
 
 const NavItem = ({ children }) => {
   return <li>{children}</li>;
@@ -13,6 +22,13 @@ export const Footer = ({ navigation }) => {
   return (
     <FooterContainer>
       <FooterWrapper>
+        <Logo>
+          <NavItem>
+            <Link href="/">
+              <PrismicText field={navigation.data.homepageLabel} />
+            </Link>
+          </NavItem>
+        </Logo>
         <div>
           <ul>
             <h3>Contact the Publisher</h3>
@@ -31,15 +47,14 @@ export const Footer = ({ navigation }) => {
         <div>
           <ul>
             <h3>Explorate</h3>
-            <NavList>
-              {navigation.data?.links.map((item) => (
-                <NavItem key={prismic.asText(item.label)}>
-                  <PrismicNextLink field={item.link}>
-                    <PrismicText field={item.label} />
-                  </PrismicNextLink>
-                </NavItem>
-              ))}
-            </NavList>
+
+            {navigation.data?.links.map((item) => (
+              <NavItem key={prismic.asText(item.label)}>
+                <PrismicNextLink field={item.link}>
+                  <PrismicText field={item.label} />
+                </PrismicNextLink>
+              </NavItem>
+            ))}
           </ul>
         </div>
         <div>
@@ -47,13 +62,21 @@ export const Footer = ({ navigation }) => {
           <p>191 Middleville Road, NY 1001, Sydney Australia</p>
         </div>
         <div>
-          <ul>
-            <h3>Connections</h3>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>LinkedIn</li>
-            <li>Pinterest</li>
-          </ul>
+          <h3>Connections</h3>
+          <SocialList>
+            <li>
+              <Facebook />
+            </li>
+            <li>
+              <Twitter />
+            </li>
+            <li>
+              <Instagram />
+            </li>
+            <li>
+              <Pinterest />
+            </li>
+          </SocialList>
         </div>
       </FooterWrapper>
     </FooterContainer>

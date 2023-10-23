@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { Layout } from "@/components/Layout";
+import { HomeMainSection } from "../../components/Components.styled.js";
 
 export async function generateMetadata({ params }) {
   const client = createClient();
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${prismic.asText(page.data.title)} | ${prismic.asText(
-      settings.data.name,
+      settings.data.name
     )}`,
     description: page.data.meta_description,
     openGraph: {
@@ -40,14 +41,15 @@ export default async function Page({ params }) {
 
   return (
     <Layout navigation={navigation} settings={settings}>
-      <SliceZone slices={page.data.slices} components={components} />
+      <HomeMainSection>
+        <SliceZone slices={page.data.slices} components={components} />
+      </HomeMainSection>
     </Layout>
   );
 }
 
 export async function generateStaticParams() {
   const client = createClient();
-
   const pages = await client.getAllByType("page");
 
   return pages.map((page) => {

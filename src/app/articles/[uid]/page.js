@@ -73,7 +73,7 @@ export default async function Page({ params }) {
         </Bounded>
 
         <MainArticle>
-          <Bounded className="pb-0">
+          <Bounded>
             <SectionTitle>
               <PrismicText field={article.data.title} />
             </SectionTitle>

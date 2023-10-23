@@ -27,8 +27,12 @@ export const Logo = styled.div`
 export const SocialList = styled.ul`
   display: flex;
   gap: 25px;
-`
+`;
 
+export const Navigation = styled.div`
+  display: flex;
+  gap: 25px;
+`;
 
 // hero
 export const HeroBackground = styled.div`
@@ -105,6 +109,8 @@ export const CardDate = styled.p`
   margin-bottom: 15px;
 `;
 export const CardContent = styled.div`
+  height: 285px;
+
   padding: 20px;
 `;
 export const CardTitle = styled.h3`
@@ -117,10 +123,9 @@ export const CardTitle = styled.h3`
 `;
 export const ArticleDescription = styled.p`
   color: #6c757d;
-  font-size: 12px;
-  font-style: normal;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  max-height: 150px;
 `;
 export const ArticleImg = styled.div`
   width: 100%;
@@ -231,4 +236,32 @@ export const MainArticle = styled.article`
     width: auto;
     border-radius: 5px;
   }
+`;
+
+export const ProfileImage = styled.div`
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-height: 500px;
+    width: auto;
+    border-radius: 5px;
+  }
+`;
+
+export const ProfileDescription = styled.div`
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+`;
+
+export const ProfileTitle = styled.div`
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 25px;
+  font-style: italic;
+  margin-bottom: 15px;
 `;

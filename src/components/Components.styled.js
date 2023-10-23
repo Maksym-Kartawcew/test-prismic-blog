@@ -24,6 +24,12 @@ export const Logo = styled.div`
   font-weight: 700;
 `;
 
+export const SocialList = styled.ul`
+  display: flex;
+  gap: 25px;
+`
+
+
 // hero
 export const HeroBackground = styled.div`
   background: url(${(props) => props.backgroundimage}) no-repeat center center;

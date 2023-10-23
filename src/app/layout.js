@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.className} ${libre_baskerville.className}`}
+      className={`${inter} ${libre_baskerville}`}
     >
       <body>
         <main>

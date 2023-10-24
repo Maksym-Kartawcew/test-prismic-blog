@@ -6,17 +6,15 @@ import {
   FooterContainer,
   Logo,
   SocialList,
+  SocIcon,
   FooterWrapper,
-  NavList,
+  NavItem,
+  FooterTitle,
 } from "./Components.styled";
 import { Facebook } from "../Icons/Facebook.jsx";
 import { Twitter } from "../Icons/Twitter.jsx";
 import { Instagram } from "../Icons/Instagram.jsx";
 import { Pinterest } from "../Icons/Pinterest.jsx";
-
-const NavItem = ({ children }) => {
-  return <li>{children}</li>;
-};
 
 export const Footer = ({ navigation }) => {
   return (
@@ -31,7 +29,7 @@ export const Footer = ({ navigation }) => {
         </Logo>
         <div>
           <ul>
-            <h3>Contact the Publisher</h3>
+            <FooterTitle>Contact the Publisher</FooterTitle>
             <li>
               {" "}
               <a href="mailto:maxkartavtsev@gmail.com">
@@ -46,8 +44,7 @@ export const Footer = ({ navigation }) => {
         </div>
         <div>
           <ul>
-            <h3>Explorate</h3>
-
+            <FooterTitle>Explorate</FooterTitle>
             {navigation.data?.links.map((item) => (
               <NavItem key={prismic.asText(item.label)}>
                 <PrismicNextLink field={item.link}>
@@ -58,24 +55,24 @@ export const Footer = ({ navigation }) => {
           </ul>
         </div>
         <div>
-          <h3>Headquarter</h3>
-          <p>191 Middleville Road, NY 1001, Sydney Australia</p>
+          <FooterTitle>Headquarter</FooterTitle>
+          <p>191 Middleville Road,<br/> NY 1001, Sydney <br/>Australia</p>
         </div>
         <div>
-          <h3>Connections</h3>
+          <FooterTitle>Connections</FooterTitle>
           <SocialList>
-            <li>
+            <SocIcon href="">
               <Facebook />
-            </li>
-            <li>
+            </SocIcon>
+            <SocIcon href="">
               <Twitter />
-            </li>
-            <li>
+            </SocIcon>
+            <SocIcon href="">
               <Instagram />
-            </li>
-            <li>
+            </SocIcon>
+            <SocIcon href="">
               <Pinterest />
-            </li>
+            </SocIcon>
           </SocialList>
         </div>
       </FooterWrapper>

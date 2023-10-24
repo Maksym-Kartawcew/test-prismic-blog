@@ -6,7 +6,7 @@ import { getExcerpt } from "@/lib/getExcerpt";
 import { findFirstImage } from "@/lib/findFirstImage";
 import { dateFormatter } from "@/lib/dateFormatter";
 import {
-  ArticleCard,
+  ArticleCardStyled,
   ArticleImg,
   CardTitle,
   CardContent,
@@ -14,7 +14,7 @@ import {
   ArticleDescription,
 } from "./Components.styled";
 
-export function Article({ article }) {
+export function ArticleCard({ article }) {
   const featuredImage =
     (prismic.isFilled.image(article.data.featuredImage) &&
       article.data.featuredImage) ||
@@ -25,7 +25,7 @@ export function Article({ article }) {
   const excerpt = getExcerpt(article.data.slices);
 
   return (
-    <ArticleCard>
+    <ArticleCardStyled>
       <PrismicNextLink document={article}>
         <ArticleImg>
           {prismic.isFilled.image(featuredImage) && (
@@ -44,6 +44,6 @@ export function Article({ article }) {
           {excerpt}
         </ArticleDescription>
       </CardContent>
-    </ArticleCard>
+    </ArticleCardStyled>
   );
 }

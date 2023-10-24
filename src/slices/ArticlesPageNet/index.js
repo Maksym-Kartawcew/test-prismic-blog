@@ -6,7 +6,7 @@
 
 import { createClient } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
-import { Article } from "@/components/Article";
+import { ArticleCard} from "@/components/ArticleCard.js";
 import {
   ArticlesNet,
   SectionTitle,
@@ -32,7 +32,7 @@ export default async function ArticlesPageNet({ slice }) {
 
         <ArticlesNet>
           {articles.map((article) => (
-            <Article key={article.id} article={article} />
+            <ArticleCard key={article.id} article={article} />
           ))}
         </ArticlesNet>
       </Bounded>

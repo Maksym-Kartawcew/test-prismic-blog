@@ -1,32 +1,20 @@
 import "../styles/globals.css";
-
-import { Inter, Libre_Baskerville } from "next/font/google";
-
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { Lora } from "next/font/google";
 
-const libre_baskerville = Libre_Baskerville({
+const lora = Lora({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "700"],
-  variable: "--libre-baskerville",
   display: "swap",
 });
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${inter} ${libre_baskerville}`}
-    >
+    <html lang="en" className={lora.className}>
       <body>
         <main>
-           {children}
+          {children}
           <PrismicPreview repositoryName={repositoryName} />
         </main>
       </body>

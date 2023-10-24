@@ -1,4 +1,5 @@
 "use client";
+
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -14,11 +15,32 @@ export const HeaderWrapper = styled.header`
   align-items: center;
   color: white;
 `;
+
+export const HeaderBackground = styled.div`
+  width: 1440px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+`;
+
 export const NavList = styled.div`
   display: flex;
   gap: 25px;
 `;
+export const NavItem = styled.li`
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: #ef8354;
+  }
+  &:focus {
+    outline: none;
+  }
+`;
+
 export const Logo = styled.div`
+  font-family: "Roboto";
   color: #f8f9fa;
   font-size: 20px;
   font-weight: 700;
@@ -26,7 +48,22 @@ export const Logo = styled.div`
 
 export const SocialList = styled.ul`
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
+`;
+
+export const SocIcon = styled.a`
+  fill: white;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    fill: #ef8354;
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Navigation = styled.div`
@@ -94,13 +131,23 @@ export const ArticlesHomeNet = styled.div`
     display: none;
   }
 `;
-export const ArticleCard = styled.div`
+export const ArticleCardStyled = styled.div`
   height: 565px;
   width: 285px;
   background: #ffffff;
   border: 1px solid #e7e9fc;
   overflow: hidden;
   border-radius: 5px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  :focus {
+    box-shadow:
+      0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16),
+      0px 2px 1px rgba(46, 47, 66, 0.08);
+  }
 `;
 export const CardDate = styled.p`
   color: #6c757d;
@@ -161,10 +208,21 @@ export const FooterContainer = styled.section`
 export const FooterWrapper = styled.footer`
   width: 1200px;
   margin: 0 auto;
-  padding: 50px 0px;
+  padding: 75px 0px;
   display: flex;
   justify-content: space-between;
-  color: #f8f9fa;
+  color: #e5e5e5;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+`;
+export const FooterTitle = styled.h3`
+  color: #fff;
+  font-family: Lora;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  margin-bottom: 15px;
 `;
 
 // SubscribeForm
@@ -218,6 +276,16 @@ export const EditorsCard = styled.div`
   border: 1px solid #e7e9fc;
   overflow: hidden;
   border-radius: 5px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  :focus {
+    box-shadow:
+      0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16),
+      0px 2px 1px rgba(46, 47, 66, 0.08);
+  }
 `;
 
 export const MainArticle = styled.article`

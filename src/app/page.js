@@ -3,7 +3,7 @@ import * as prismic from "@prismicio/client";
 import { createClient } from "@/prismicio";
 import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
-import { Article } from "@/components/Article";
+import { ArticleCard } from "@/components/ArticleCard.js";
 import { SubscribeForm } from "@/components/SubscribeForm.jsx";
 import { EditorsPick } from "@/components/EditorsPick.jsx";
 import {
@@ -40,7 +40,7 @@ export default async function Index() {
           <SectionTitle> Popular topics</SectionTitle>
           <ArticlesHomeNet>
             {articles.map((article) => (
-              <Article key={article.id} article={article} />
+              <ArticleCard key={article.id} article={article} />
             ))}
           </ArticlesHomeNet>
         </Bounded>

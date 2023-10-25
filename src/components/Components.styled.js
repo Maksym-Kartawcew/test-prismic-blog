@@ -1,6 +1,8 @@
 "use client";
-
 import styled from "styled-components";
+const DESKTOPWIDE = "144Opx";
+const TABLETWIDE = "768px";
+const MOBILEWIDE = "480px";
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -8,7 +10,6 @@ export const Container = styled.div`
   padding: 0px 25px;
 `;
 
-// Header
 export const HeaderWrapper = styled.header`
   display: flex;
   height: 80px;
@@ -18,7 +19,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderBackground = styled.div`
-  max-width: 1440px;
+  max-width: ${DESKTOPWIDE};
   background-color: rgba(0, 0, 0, 0.2);
   position: relative;
   margin: 0 auto;
@@ -28,6 +29,10 @@ export const HeaderBackground = styled.div`
 export const NavList = styled.div`
   display: flex;
   gap: 25px;
+
+  @media (max-width: ${MOBILEWIDE}) {
+    display: none;
+  }
 `;
 export const NavItem = styled.li`
   transition-duration: 250ms;
@@ -45,18 +50,22 @@ export const Logo = styled.div`
   font-size: 20px;
   font-weight: 700;
 `;
-
+export const SocialContainer = styled.div`
+  display: block;
+  @media (max-width: ${TABLETWIDE}) {
+    display: none;
+  }
+`;
 export const SocialList = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
-  @media (max-width: 600px) {
-   display: none;
+
+  @media (max-width: ${MOBILEWIDE}) {
+    display: none;
   }
-
 `;
-
 export const SocIcon = styled.a`
   fill: white;
   transition-duration: 250ms;
@@ -74,9 +83,8 @@ export const Navigation = styled.div`
   gap: 25px;
 `;
 
-// hero
 export const HeroBackground = styled.div`
-  max-width: 1440px;
+  max-width: ${DESKTOPWIDE};
   margin: 0 auto;
   background: url(${(props) => props.backgroundimage}) no-repeat center center;
   background-size: cover;
@@ -93,10 +101,12 @@ export const HeroHeading = styled.div`
   font-size: 36px;
   font-weight: 700;
   text-align: left;
+  line-height: 1.2;
   max-width: 600px;
 `;
 
 export const HeroDescription = styled.div`
+  margin-top: 24px;
   display: flex;
   text-align: left;
   gap: 40px;
@@ -106,10 +116,9 @@ export const HeroDescription = styled.div`
   font-weight: 400;
 `;
 
-// Articles homepage Net
 export const HomeMainSection = styled.section`
   background: #f8f9fa;
-  max-width: 1440px;
+  max-width: ${DESKTOPWIDE};
   padding: 0;
   margin: 0 auto;
   justify-content: center;
@@ -133,6 +142,18 @@ export const ArticlesHomeNet = styled.div`
 
   & > *:nth-child(n + 9) {
     display: none;
+  }
+  @media (max-width: ${TABLETWIDE}) {
+    grid-template-columns: repeat(3, 1fr);
+    & > *:nth-child(n + 7) {
+      display: none;
+    }
+  }
+  @media (max-width: ${MOBILEWIDE}) {
+    grid-template-columns: repeat(1, 1fr);
+    & > *:nth-child(n + 4) {
+      display: none;
+    }
   }
 `;
 export const ArticleCardStyled = styled.div`
@@ -168,12 +189,15 @@ export const CardTitle = styled.h3`
   font-weight: 700;
   line-height: 25px;
   margin-bottom: 15px;
+
+  overflow: hidden;
 `;
 export const ArticleDescription = styled.p`
   color: #6c757d;
   font-size: 14px;
   font-weight: 400;
-  max-height: 150px;
+
+  overflow: hidden;
 `;
 export const ArticleImg = styled.div`
   width: 100%;
@@ -187,7 +211,6 @@ export const ArticleImg = styled.div`
   }
 `;
 
-// ArticlesPage Net
 export const ArticlesNet = styled.div`
   margin-top: 30px;
   display: grid;
@@ -197,9 +220,8 @@ export const ArticlesNet = styled.div`
   background: #f8f9fa;
 `;
 
-// Footer
 export const FooterContainer = styled.section`
-  max-width: 1440px;
+  max-width: ${DESKTOPWIDE};
   margin: 0 auto;
   justify-content: center;
   background-color: #212529;
@@ -212,7 +234,12 @@ export const FooterWrapper = styled.footer`
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
+
+  @media (max-width: ${MOBILEWIDE}) {
+    display: block;
+  }
 `;
+
 export const FooterTitle = styled.h3`
   color: #fff;
   font-family: Lora;
@@ -220,11 +247,14 @@ export const FooterTitle = styled.h3`
   font-weight: 700;
   line-height: 25px;
   margin-bottom: 15px;
+
+  @media (max-width: ${MOBILEWIDE}) {
+    margin-top: 15px;
+  }
 `;
 
-// SubscribeForm
 export const SubscribeBackground = styled.div`
-  max-width: 1440px;
+  max-width: ${DESKTOPWIDE};
   margin: 0 auto;
   background: url(${(props) => props.backgroundimage}) no-repeat center center;
   background-size: cover;
@@ -275,7 +305,6 @@ export const SubscribeButton = styled.button`
   }
 `;
 
-// Editors Pick
 export const EditorsPickNet = styled.div`
   margin-top: 30px;
   display: grid;
@@ -285,6 +314,19 @@ export const EditorsPickNet = styled.div`
 
   & > *:nth-child(n + 4) {
     display: none;
+  }
+
+  @media (max-width: ${TABLETWIDE}) {
+    grid-template-columns: repeat(2, 1fr);
+    & > *:nth-child(n + 3) {
+      display: none;
+    }
+  }
+  @media (max-width: ${MOBILEWIDE}) {
+    grid-template-columns: repeat(1, 1fr);
+    & > *:nth-child(n + 2) {
+      display: none;
+    }
   }
 `;
 

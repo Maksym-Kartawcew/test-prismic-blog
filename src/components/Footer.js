@@ -7,6 +7,7 @@ import {
   Logo,
   SocialList,
   SocIcon,
+  SocialContainer,
   FooterWrapper,
   NavItem,
   FooterTitle,
@@ -65,9 +66,9 @@ export const Footer = ({ navigation }) => {
             </p>
           </div>
           <div>
-            <SocialList>
+            <SocialContainer>
               <FooterTitle>Connections</FooterTitle>
-              <div>
+              <SocialList>
                 <SocIcon href="">
                   <Facebook />
                 </SocIcon>
@@ -80,8 +81,8 @@ export const Footer = ({ navigation }) => {
                 <SocIcon href="">
                   <Pinterest />
                 </SocIcon>
-              </div>
-            </SocialList>
+              </SocialList>
+            </SocialContainer>
           </div>
         </FooterWrapper>
       </Bounded>

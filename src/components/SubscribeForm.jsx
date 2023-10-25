@@ -8,6 +8,7 @@ import {
   SubscribeHeading,
   SubscribeText,
   SubscribeInput,
+  SubscribeButton 
 } from "./Components.styled";
 
 export async function SubscribeForm() {
@@ -35,9 +36,9 @@ export async function SubscribeForm() {
                 required={true}
               />
               <SubscribeText>
-                <button type="submit">
+                <SubscribeButton type="submit">
                   Submit <span>&rarr;</span>
-                </button>
+                </SubscribeButton >
               </SubscribeText>
             </div>
           </form>

@@ -8,7 +8,7 @@ import {
 } from "./Components.styled";
 import { Bounded } from "./Bounded";
 
-export async function  Hero() {
+export async function Hero() {
   const client = createClient();
   const settings = await client.getSingle("settings");
 
@@ -17,16 +17,14 @@ export async function  Hero() {
   return (
     <HeroBackground backgroundimage={backgroundURL}>
       <Bounded>
-        <HeroWrapper>
-          <HeroHeading>
+        <HeroHeading>
           <PrismicText field={settings.data.name} />
-          </HeroHeading>
+        </HeroHeading>
 
-          <HeroDescription>
+        <HeroDescription>
           <PrismicText field={settings.data.blogdate} />
           <PrismicText field={settings.data.description} />
-          </HeroDescription>
-        </HeroWrapper>
+        </HeroDescription>
       </Bounded>
     </HeroBackground>
   );

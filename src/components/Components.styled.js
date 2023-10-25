@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
+  padding: 0px 25px;
 `;
 
 // Header
@@ -17,7 +18,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderBackground = styled.div`
-  width: 1440px;
+  max-width: 1440px;
   background-color: rgba(0, 0, 0, 0.2);
   position: relative;
   margin: 0 auto;
@@ -40,7 +41,6 @@ export const NavItem = styled.li`
 `;
 
 export const Logo = styled.div`
-  font-family: "Roboto";
   color: #f8f9fa;
   font-size: 20px;
   font-weight: 700;
@@ -51,11 +51,14 @@ export const SocialList = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 25px;
+  @media (max-width: 600px) {
+   display: none;
+  }
+
 `;
 
 export const SocIcon = styled.a`
   fill: white;
-
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
@@ -73,7 +76,10 @@ export const Navigation = styled.div`
 
 // hero
 export const HeroBackground = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
   background: url(${(props) => props.backgroundimage}) no-repeat center center;
+  background-size: cover;
   text-align: center;
   color: #fff;
   margin-top: -80px;
@@ -81,22 +87,20 @@ export const HeroBackground = styled.div`
   padding-bottom: 150px;
 `;
 
-export const HeroWrapper = styled.div``;
-
 export const HeroHeading = styled.div`
   color: #fff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 36px;
   font-weight: 700;
   text-align: left;
-  width: 600px;
+  max-width: 600px;
 `;
 
 export const HeroDescription = styled.div`
   display: flex;
   text-align: left;
   gap: 40px;
-  width: 600px;
+  max-width: 600px;
   color: #e5e5e5;
   font-size: 12px;
   font-weight: 400;
@@ -105,12 +109,12 @@ export const HeroDescription = styled.div`
 // Articles homepage Net
 export const HomeMainSection = styled.section`
   background: #f8f9fa;
-  width: 1440px;
+  max-width: 1440px;
   padding: 0;
   margin: 0 auto;
   justify-content: center;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 `;
 export const SectionTitle = styled.h3`
   color: #495057;
@@ -132,8 +136,7 @@ export const ArticlesHomeNet = styled.div`
   }
 `;
 export const ArticleCardStyled = styled.div`
-  height: 565px;
-  width: 285px;
+  max-height: 565px;
   background: #ffffff;
   border: 1px solid #e7e9fc;
   overflow: hidden;
@@ -156,12 +159,10 @@ export const CardDate = styled.p`
   margin-bottom: 15px;
 `;
 export const CardContent = styled.div`
-  height: 285px;
-
+  max-height: 285px;
   padding: 20px;
 `;
 export const CardTitle = styled.h3`
-  width: 250px;
   color: #495057;
   font-size: 18px;
   font-weight: 700;
@@ -176,7 +177,7 @@ export const ArticleDescription = styled.p`
 `;
 export const ArticleImg = styled.div`
   width: 100%;
-  height: 280px;
+  max-height: 280px;
   overflow: hidden;
 
   img {
@@ -198,16 +199,12 @@ export const ArticlesNet = styled.div`
 
 // Footer
 export const FooterContainer = styled.section`
-  width: 1440px;
-  padding: 0;
+  max-width: 1440px;
   margin: 0 auto;
-  display: flex;
   justify-content: center;
-  background: #212529;
+  background-color: #212529;
 `;
 export const FooterWrapper = styled.footer`
-  width: 1200px;
-  margin: 0 auto;
   padding: 75px 0px;
   display: flex;
   justify-content: space-between;
@@ -227,11 +224,15 @@ export const FooterTitle = styled.h3`
 
 // SubscribeForm
 export const SubscribeBackground = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
   background: url(${(props) => props.backgroundimage}) no-repeat center center;
+  background-size: cover;
   text-align: center;
   color: #fff;
-  padding-top: 220px;
-  height: 600px;
+  padding-top: 175px;
+  padding-bottom: 175px;
+  max-height: 600px;
 `;
 export const SubscribeHeading = styled.h2`
   color: #fff;
@@ -255,6 +256,24 @@ export const SubscribeInput = styled.input`
   padding: 5px;
   font-size: 14px;
 `;
+export const SubscribeButton = styled.button`
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  :focus {
+    color: #ef8354;
+    box-shadow:
+      0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16),
+      0px 2px 1px rgba(46, 47, 66, 0.08);
+  }
+`;
 
 // Editors Pick
 export const EditorsPickNet = styled.div`
@@ -271,7 +290,6 @@ export const EditorsPickNet = styled.div`
 
 export const EditorsCard = styled.div`
   height: 565px;
-  width: calc(1160 / 3);
   background: #ffffff;
   border: 1px solid #e7e9fc;
   overflow: hidden;
@@ -293,9 +311,8 @@ export const MainArticle = styled.article`
   font-size: 14px;
   font-weight: 400;
   line-height: 25px;
-
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   img {
     display: block;
@@ -308,8 +325,8 @@ export const MainArticle = styled.article`
 
 export const ProfileImage = styled.div`
   margin: 0 auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 
   img {
     display: block;
@@ -322,8 +339,9 @@ export const ProfileImage = styled.div`
 
 export const ProfileDescription = styled.div`
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 25px;
+  text-align: justify;
 `;
 
 export const ProfileTitle = styled.div`

@@ -182,6 +182,7 @@ export const CardDate = styled.p`
 export const CardContent = styled.div`
   max-height: 285px;
   padding: 20px;
+  box-shadow: inset 0px -30px 50px -50px black;
 `;
 export const CardTitle = styled.h3`
   color: #495057;

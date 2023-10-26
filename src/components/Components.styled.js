@@ -224,13 +224,13 @@ export const ArticlesNet = styled.div`
 
    @media (max-width: ${TABLETWIDE}) {
     grid-template-columns: repeat(3, 1fr);
-    & > *:nth-child(n + 17) {
+    & > *:nth-child(n + 13) {
       display: none;
     }
   }
   @media (max-width: ${MOBILEWIDE}) {
     grid-template-columns: repeat(1, 1fr);
-    & > *:nth-child(n + 17) {
+    & > *:nth-child(n + 13) {
       display: none;
     }
   }

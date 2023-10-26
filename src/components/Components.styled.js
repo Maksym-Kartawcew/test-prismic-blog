@@ -220,17 +220,14 @@ export const ArticlesNet = styled.div`
   grid-row-gap: 50px;
   background: #f8f9fa;
   
-& > *:nth-child(n + 17)
-
-  @media (max-width: ${MOBILEWIDE}) {
+    @media (max-width: ${MOBILEWIDE}) {
     grid-template-columns: repeat(1, 1fr);
-    & > *:nth-child(n + 13) {
-      display: none;
     }
-  }
      @media (max-width: ${TABLETWIDE}) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  & > *:nth-child(n + 17)
 `;
 
 export const FooterContainer = styled.section`
